@@ -2,7 +2,7 @@
   "name": "business.card.be",
   "version": "1.0.0",
   "scripts": {
-    "init": "eslint --init",
+    "lint": "eslint . --ext .js",
     "start": "node -r dotenv/config index.js",
     "db:container": "docker run --rm -it -p 5432:5432 --name bc -e POSTGRES_PASSWORD=root -e POSTGRES_USER=root -e POSTGRES_DB=business.card postgres:13"
   },
@@ -11,11 +11,11 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "eslint": "^7.14.0",
+    "eslint": "7.14.0",
     "sequelize-cli": "6.2.0"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "8.2.0",
     "sequelize": "6.3.5"
   }
 }
