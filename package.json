@@ -4,7 +4,12 @@
   "scripts": {
     "lint": "eslint . --ext .js",
     "start": "node -r dotenv/config index.js",
-    "db:container": "docker run --rm -it -p 5432:5432 --name bc -e POSTGRES_PASSWORD=root -e POSTGRES_USER=root -e POSTGRES_DB=business.card postgres:13"
+    "db:create": "sequelize db:create",
+    "db:drop": "sequelize db:drop",
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo:all",
+    "db:seed": "sequelize db:seed:all",
+    "db:container": "docker run --rm -it -p 5432:5432 --name bc -e POSTGRES_PASSWORD=root -e POSTGRES_USER=root -e POSTGRES_DB=business.card.db postgres:13"
   },
   "repository": "https://github.com/kuzanatoliy/business.card.be.git",
   "author": "kuzanatoliy <njkznu@gmail.com>",
@@ -16,6 +21,7 @@
   },
   "dependencies": {
     "dotenv": "8.2.0",
+    "pg": "8.5.1",
     "sequelize": "6.3.5"
   }
 }

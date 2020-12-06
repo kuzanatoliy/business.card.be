@@ -1,4 +1,4 @@
-const DEFAULT_ENV = require('./defautlt');
+const DEFAULT_ENV = require('../constants/defautlt');
 
 module.exports = {
   database: process.env.DB_NAME || DEFAULT_ENV.DB_NAME,
